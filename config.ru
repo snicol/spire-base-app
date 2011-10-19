@@ -1,9 +1,9 @@
-require 'rack'
 require 'spire'
-require 'rack/rewrite'
 
 path = File.expand_path(__FILE__)
 path["config.ru"] = "app"
+
+# add more middleware here if needed
 
 use Rack::Static, :urls => ["/public"]
 
