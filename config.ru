@@ -9,4 +9,7 @@ use Rack::Rewrite do
   rewrite '/favicon.ico', '/public/favicon.ico'
 end
 
-run Spire::Router.new(path, $routes)
+run Spire::Router.new(path, {
+  "default" => "index#index", # the default route!
+  "/index" => "index#index",
+})
