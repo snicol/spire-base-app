@@ -11,6 +11,5 @@ end
 
 run Spire::Router.new(path, {
   "default" => "index#index", # the default route!
-  "/index" => "index#index",
-  "/test" => "test#index"
+  "/index" => "index#index"
 })
