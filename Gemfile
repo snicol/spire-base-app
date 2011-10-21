@@ -1,3 +1,3 @@
 source "http://rubygems.org"
 
-gem "spire", ">= 0.3.0"
+gem "spire", ">= 0.4.2"
