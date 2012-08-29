@@ -1,11 +1,14 @@
 require 'spire'
 
-path = File.expand_path(__FILE__)
-path["config.ru"] = "app"
-
 use Rack::Static, :urls => ["/public"]
 
-run Spire::Router.new(path, {
-  "default" => "index#index", # the default route!
-  "/index" => "index#index"
-})
+map = Spire::Map.new
+
+# Default route is now just '/'
+map.route :url => "/", :to => {:controller => "index", :action => "index"}
+map.route :url => "/index", :to => {:controller => "index", :action => "index"}
+
+# If nothing is found, it will try and match controller and action based on URL
+map.auto = true
+
+run Spire::Router.new(map)
