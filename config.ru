@@ -11,4 +11,4 @@ map.route :url => "/index", :to => {:controller => "index", :action => "index"}
 # If nothing is found, it will try and match controller and action based on URL
 map.auto = true
 
-run Spire::Router.new(map)
+run Spire::Router.new(map, File.expand_path(__FILE__))
